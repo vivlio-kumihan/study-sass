@@ -1,0 +1,61 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500;900&display=swap');
+
+// ////////// set variables
+$red: red;
+$black: black;
+$light-blue: rgb(230, 243, 255);
+
+html {
+  font-size: 93.75%;
+  scroll-behavior: smooth;
+  /*  ページ先頭の要素に付ける。戻る位置を調整してくれる。
+  scroll-margin-top: 80px;  */
+}
+// ////////// <= end variables
+
+body {
+  font-size: 1rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #555;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  max-width: 1050px;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: $light-blue;
+}
+
+// About @Mixin
+// @mixin === define...属性を定義する
+@mixin init-box {
+  width: 165px;
+  height: 165px;
+  font-size: 2em;
+  border: 5px solid #bbb;
+} 
+
+// @include === 参照している値を宣言する
+// 属性を上書きしていけるという寸法
+.box-one {
+  @include init-box;
+  background-color: #b8bebe;
+}
+
+.box-two {
+  @include init-box;
+  background-color: #b3b4e6;
+}
+
+.box-three {
+  @include init-box;
+  background-color: #bae6b6;
+}
