@@ -27,7 +27,15 @@ body {
   background-color: rgb(230, 243, 255);
 }
 
-.box-one {
+h2 {
+  margin-right: 0.5em;
+  font-size: 3rem;
+  line-height: 1em;
+  font-weight: 900;
+  color: rgb(55, 155, 255);
+}
+
+.box1-one {
   width: 165px;
   height: 165px;
   font-size: 2em;
@@ -35,7 +43,7 @@ body {
   background-color: #b8bebe;
 }
 
-.box-two {
+.box1-two {
   width: 165px;
   height: 165px;
   font-size: 2em;
@@ -43,10 +51,46 @@ body {
   background-color: #b3b4e6;
 }
 
-.box-three {
+.box1-three {
   width: 165px;
   height: 165px;
   font-size: 2em;
   border: 5px solid #bbb;
+  background-color: #bae6b6;
+}
+
+.box2-one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 165px;
+  height: 165px;
+  font-size: 30px;
+  font-weight: 900;
+  border: 5px solid #d86767;
+  background-color: #b8bebe;
+}
+
+.box2-two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 165px;
+  height: 165px;
+  font-size: 60px;
+  font-weight: 900;
+  border: 5px solid #5c5ee4;
+  background-color: #b3b4e6;
+}
+
+.box2-three {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 165px;
+  height: 165px;
+  font-size: 90px;
+  font-weight: 900;
+  border: 5px solid #59e74c;
   background-color: #bae6b6;
 }

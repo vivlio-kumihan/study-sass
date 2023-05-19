@@ -4,6 +4,7 @@
 // ////////// set variables
 $red: red;
 $black: black;
+$nomal-blue: rgb(55, 155, 255);
 $light-blue: rgb(230, 243, 255);
 
 html {
@@ -34,9 +35,17 @@ body {
   background-color: $light-blue;
 }
 
+h2 {
+  margin-right: .5em;
+  font-size: 3rem;
+  line-height: 1em;
+  font-weight: 900;
+  color: $nomal-blue;
+}
+
 // About @Mixin
 // @mixin === define...属性を定義する
-@mixin init-box {
+@mixin init-box1 {
   width: 165px;
   height: 165px;
   font-size: 2em;
@@ -45,17 +54,53 @@ body {
 
 // @include === 参照している値を宣言する
 // 属性を上書きしていけるという寸法
-.box-one {
-  @include init-box;
+.box1-one {
+  @include init-box1;
   background-color: #b8bebe;
 }
 
-.box-two {
-  @include init-box;
+.box1-two {
+  @include init-box1;
   background-color: #b3b4e6;
 }
 
-.box-three {
-  @include init-box;
+.box1-three {
+  @include init-box1;
+  background-color: #bae6b6;
+}
+
+// About Argument 引数
+// @mixinの引数
+// 任意に引数をカンマ区切りで入れて
+@mixin init-box2( $font-size,
+                  $border-weight,
+                  $border-style, 
+                  $border-color) {
+  // 該当箇所に設定していく
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 165px;
+  height: 165px;
+  font-size: $font-size;
+  font-weight: 900;
+  border: $border-weight
+          $border-style
+          $border-color;
+}
+
+// 設定した順番に引数へ値を代入していく
+.box2-one {
+  @include init-box2(30px, 5px, solid, #d86767);
+  background-color: #b8bebe;
+}
+
+.box2-two {
+  @include init-box2(60px, 5px, solid, #5c5ee4);
+  background-color: #b3b4e6;
+}
+
+.box2-three {
+  @include init-box2(90px, 5px, solid, #59e74c);
   background-color: #bae6b6;
 }
