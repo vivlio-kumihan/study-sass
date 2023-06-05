@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+// as以降は省略できるけどしません。
+@use 'var' as var;
+@use 'mixin' as mixin;
+
+@use 'header';
+@use 'footer';
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500;900&display=swap');
+
+html {
+  font-size: 93.75%;
+  scroll-behavior: smooth;
+  /*  ページ先頭の要素に付ける。戻る位置を調整してくれる。
+  scroll-margin-top: 80px;  */
+}
+// ////////// <= end variables
+
+body {
+  font-size: 1rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var.$black;
+}
+
+.container {
+  @include mixin.flex-center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // gap: 1em;
+  // max-width: 600px;
+  // width: 100%;
+  // height: 100vh;
+  // margin: 0 auto;
+  // background-color: var.$gray;
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+  background-color: var.$black;
+  // background-color: $light-blue;
+}
