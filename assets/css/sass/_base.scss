@@ -1,0 +1,12 @@
+:root {
+  font-size: 93.75%;
+  overflow-x: hidden;
+  body {
+    font-family: "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "游ゴシック体", YuGothic, YuGothicUI, sans-serif;
+    color: #333;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}

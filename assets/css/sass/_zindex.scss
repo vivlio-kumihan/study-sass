@@ -1,0 +1,11 @@
+$zidx-map: header, mask, modal;
+
+// z-index属性へ代入する関数を定義する。
+// 配列と値の名称を引数とする。
+@function get_index($name) {
+  @return index($zidx-map, $name)
+}
+
+header {
+  z-index: get_index(header);
+}
