@@ -1,9 +1,15 @@
+// @use '../forwards' as fw;
+@use 'color' as cl;
 
-
-@mixin default-button {
-  .button {
-    width: 200px;
-    height: 50px;
-    background-color: $color_aqua;
-  }
+@mixin defalut-button {
+  width: 200px;
+  padding: 10px 0;
+  font-size: .8em;
+  font-weight: bold;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: cl.$color_green;
+  border: none;
+  border-radius: 10px;
 }

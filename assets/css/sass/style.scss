@@ -4,7 +4,8 @@
 @use 'base';
 @use 'zindex';
 @use 'forwards' as fw;
-@use 'component/button';
+@use 'module/header';
+@use 'module/footer';
 
 .box {
   width: 200px;
@@ -12,34 +13,29 @@
   background-color: fw.$color-aqua;
 }
 
-// @charset "UTF-8";
+.btn {
+  @include fw.defalut-button;
+  &.blue {
+    background-color: fw.$color-nomal-blue;
+  }
+}
 
-// // 関連するそれぞれのファイルへ、呼び出しのためいちいち記述しておかないといけない。
-// // @use 'var' as var;
-// // @use 'mixin' as mixin;
-
-// // 一つのファイルで管理する。インデックスを作る。
-// // forwardを使う。
-// @use 'forwards' as fw;
-
-// @use 'header';
-// @use 'main';
-// @use 'footer';
-
-// @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500;900&display=swap');
-
-// html {
-//   font-size: 93.75%;
-//   scroll-behavior: smooth;
-//   /*  ページ先頭の要素に付ける。戻る位置を調整してくれる。
-//   scroll-margin-top: 80px;  */
-// }
-// // ////////// <= end variables
-
-// body {
-//   font-size: 1rem;
-//   font-family: 'Noto Sans JP', sans-serif;
-//   font-weight: 300;
-//   line-height: 1.5;
-//   color: fw.$color_black;
-// }
+ul {
+  display: grid;
+  gap: 10px;
+  @include fw.media-query-pc {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @include fw.media-query-tb {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include fw.media-query-sp {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  li {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: fw.$color-green;
+  }
+}
