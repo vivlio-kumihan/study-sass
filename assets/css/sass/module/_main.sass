@@ -1,29 +1,44 @@
 main
   margin-top: 70px
   .container
-    position: relative
-    width: 100%
-    height: 100vh
-    background-color: #aaa
-    .inner
-      position: absolute
-      top: 0
-      left: 0
-      width: 300px
-      height: 300px
-      background-color: #eee
-      .box
-        // position: absolute
-        // bottom: 0
-        // left: 0
-        width: 100px
-        height: 100px
-        background-color: #555
-        z-index: 2
-        .inner-box
-          position: absolute
-          top: 0
-          right: 0
-          width: 50px
-          height: 50px
-          background-color: #fff
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin-top: 50px
+    &:first-of-type
+      padding-top: 100px
+    .box
+      height: 100px
+      margin-bottom: 30px
+      background-color: #47bbd4
+
+      // min(n倍の要素幅＝ビューポート幅, 要素幅)
+      // 幅250px | 要素幅500px | 幅250px
+      //   ex  100% / 50%  = 要素幅の2倍    => 1000px以下でビューポートに追従して狭まる
+      //       100% / 80%  = 要素幅の1.25倍 => 625px以下でビューポートに追従して狭まる
+      //       100% / 100% = 要素幅の1倍    => 500px以下でビューポートに追従して狭まる
+      &.box-min1
+        width: min(50%, 500px)
+      &.box-min2
+        width: min(80%, 500px)
+      &.box-min3
+        width: min(100%, 500px)
+
+      // max(n倍の要素幅＝ビューポート幅, 要素幅)
+      // 幅250px | 要素幅500px | 幅250px
+      //   ex  100% / 50%  = 要素幅の2倍    => 1000px以上でビューポートに追従して広がる
+      //       100% / 80%  = 要素幅の1.25倍 => 625px以上でビューポートに追従して広がる
+      //       100% / 100% = 要素幅の1倍    => 500px以上でビューポートに追従して広がる
+      &.box-max1
+        width: max(50%, 500px)
+      &.box-max2
+        width: max(80%, 500px)
+      &.box-max3
+        width: max(100%, 500px) // => 全く意味がない。width: 100%と同じ。
+
+      // 引数2、3は、min()と同じ動き。
+      // この場合だと、
+      // 要素幅200pxの2倍400pxよりビューポートが狭まると
+      // 要素幅は200pxで固定される。
+      &.box-clamp
+        width: clamp(200px, 50%, 500px)

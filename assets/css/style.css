@@ -34,32 +34,39 @@ main {
   margin-top: 70px;
 }
 main .container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background-color: #aaa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
 }
-main .container .inner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 300px;
-  height: 300px;
-  background-color: #eee;
+main .container:first-of-type {
+  padding-top: 100px;
 }
-main .container .inner .box {
-  width: 100px;
+main .container .box {
   height: 100px;
-  background-color: #555;
-  z-index: 2;
+  margin-bottom: 30px;
+  background-color: #47bbd4;
 }
-main .container .inner .box .inner-box {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50px;
-  height: 50px;
-  background-color: #fff;
+main .container .box.box-min1 {
+  width: min(50%, 500px);
+}
+main .container .box.box-min2 {
+  width: min(80%, 500px);
+}
+main .container .box.box-min3 {
+  width: min(100%, 500px);
+}
+main .container .box.box-max1 {
+  width: max(50%, 500px);
+}
+main .container .box.box-max2 {
+  width: max(80%, 500px);
+}
+main .container .box.box-max3 {
+  width: max(100%, 500px);
+}
+main .container .box.box-clamp {
+  width: clamp(200px, 50%, 500px);
 }
 
 footer {
